@@ -264,7 +264,7 @@ if task == "2" :
         redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
         pyautogui.click(redHeroTaskBarIcon)
     except pyautogui.ImageNotFoundException:
-        print('Red Hero is not open.')
+        pyautogui.hotkey("alt", "tab")
     programIsRunning = 1
     while programIsRunning == 1 :
         try :
@@ -381,14 +381,14 @@ if task == "2" :
             print("No World Boss at the moment!")
             for drops in range (6) : 
                 try:
-                    yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.8)
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
                     pyautogui.click(yes)
                     time.sleep(1)
                 except pyautogui.ImageNotFoundException:
                     print("No items left to claim.")
             try:
                 try:
-                    orc = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/orc.png", confidence = 0.8)
+                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.8)
                 except pyautogui.ImageNotFoundException:
                     pyautogui.write("/join orc-" + str(roomNumber))
                     pyautogui.hotkey("enter")
@@ -396,25 +396,25 @@ if task == "2" :
             except pyautogui.ImageNotFoundException:
                 print("Unable to join orc.")
             try:
-                orcRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/OrcRoom1.png", confidence = 0.8)
+                orcRoom1 = pyautogui.locateOnScreen("OrcRoom1.png", confidence = 0.8)
                 pyautogui.click(orcRoom1)
                 time.sleep(4)
             except pyautogui.ImageNotFoundException:
                 print("Not in orc Room 0.")
             try:
-                orcRoom2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/OrcRoom2.png", confidence = 0.9)
+                orcRoom2 = pyautogui.locateOnScreen("OrcRoom2.png", confidence = 0.9)
                 pyautogui.click(orcRoom2)
                 time.sleep(4)
             except pyautogui.ImageNotFoundException:
                 print("Not in orc Room 1.")
             try:
-                orcRoom3 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/OrcRoom3.png", confidence = 0.9)
+                orcRoom3 = pyautogui.locateOnScreen("OrcRoom3.png", confidence = 0.9)
                 pyautogui.click(orcRoom3)
                 time.sleep(2)
             except pyautogui.ImageNotFoundException:
                 print("Not in orc Room 2.")
             try:
-                orcRoom4 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/OrcRoom4.png")
+                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png")
                 pyautogui.click(orcRoom4)
                 time.sleep(4)
             except pyautogui.ImageNotFoundException:
