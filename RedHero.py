@@ -30,7 +30,7 @@ def bossIsStillALive() :
         except pyautogui.ImageNotFoundException:
             print("Boss is still alive!")
 # Asking the user for task to perform.
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n")
 roomNumber = random.randint(11111,99999)
 if task == "1" :
     # Farming HCs
@@ -428,6 +428,11 @@ if task == "3" :
         print("Not in getxp.")
         pyautogui.write("/join getxp")
         time.sleep(2)
+    programIsRunning = 1
+    while programIsRunning == 1 :
+        genericAttack()
+if task == "4" : 
+    pyautogui.hotkey("alt", "tab")
     programIsRunning = 1
     while programIsRunning == 1 :
         genericAttack()
