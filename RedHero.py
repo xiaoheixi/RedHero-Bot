@@ -14,7 +14,7 @@ def genericAttack() :
         time.sleep(0.3)
         pyautogui.hotkey("5")
 # Asking the user for task to perform.
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Generic Attack (MAC)\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n")
 if task == "1" :
     # Farming HCs
     try:
@@ -576,10 +576,13 @@ if task == "2" :
                 print("Not in orc Room 3.")
             genericAttack()
 if task == "3" : 
+    pyautogui.hotkey("alt", "tab")
     try:
-        pyautogui.hotkey("alt", "tab")
-        programIsRunning = 1
-        while programIsRunning == 1 :
-            genericAttack()
+        getxp = pyautogui.locateOnScreen("getxp.png", confidence = 0.9)
     except pyautogui.ImageNotFoundException:
-        print('Red Hero is not open.')
+        print("Not in getxp.")
+        pyautogui.write("/join getxp")
+        time.sleep(2)
+    programIsRunning = 1
+    while programIsRunning == 1 :
+        genericAttack()
