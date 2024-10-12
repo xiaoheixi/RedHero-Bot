@@ -13,6 +13,21 @@ def genericAttack() :
         pyautogui.hotkey("4")
         time.sleep(0.3)
         pyautogui.hotkey("5")
+def bossIsStillALive() :
+    bossStillAlive = 1
+    while bossStillAlive == 1 :
+        genericAttack()
+        try:
+            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.9)
+            pyautogui.click(yes)
+            bossStillAlive = 0
+        except pyautogui.ImageNotFoundException:
+            print("Boss is still alive!")
+        try:
+            town = pyautogui.locateOnScreen("town.png", confidence = 0.9)
+            bossStillAlive = 0
+        except pyautogui.ImageNotFoundException:
+            print("Boss is still alive!")
 # Asking the user for task to perform.
 task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n")
 if task == "1" :
@@ -244,293 +259,121 @@ if task == "1" :
 # Farming World Boss
 if task == "2" :
     try:
-        redHeroTaskBarIcon = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/RedHeroTaskBarIcon.png", confidence = 0.8)
+        redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
         pyautogui.click(redHeroTaskBarIcon)
     except pyautogui.ImageNotFoundException:
         print('Red Hero is not open.')
     programIsRunning = 1
     while programIsRunning == 1 :
         try :
-            join = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Join.png", confidence = 0.8)
+            join = pyautogui.locateOnScreen("Join.png", confidence = 0.8)
             pyautogui.click(join)
-            time.sleep(2)
+            time.sleep(3)
             try:
-                drakath = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/drakath.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
+                drakath = pyautogui.locateOnScreen("drakath.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Drakath!")
             # try:
-            #     firstspeaker = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/firstspeaker.png")
+            #     firstspeaker = pyautogui.locateOnScreen("firstspeaker.png")
             #     for seconds in range (1) :
             #         genericAttack()
             # except pyautogui.ImageNotFoundException:
             #     print("Not Firstspeaker!")    
             try:
-                red = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/red.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                red = pyautogui.locateOnScreen("red.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Red")
             try:
-                paragonboss = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/paragonboss.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")        
+                paragonboss = pyautogui.locateOnScreen("paragonboss.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Paragon Boss!")    
             try:
-                kuroshi = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/kuroshi.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                kuroshi = pyautogui.locateOnScreen("kuroshi.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Kuroshi!")  
             try:
-                daemon = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/daemon.png", confidence = 0.9)
+                daemon = pyautogui.locateOnScreen("daemon.png", confidence = 0.9)
                 try:
-                    daemonRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/daemonRoom1.png", confidence = 0.9)
+                    daemonRoom1 = pyautogui.locateOnScreen("daemonRoom1.png", confidence = 0.9)
                     pyautogui.click(daemonRoom1)
                     time.sleep(1)
                 except pyautogui.ImageNotFoundException:
                     print("Not in Daemon Room 0.")
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Daemon!")
             try:
-                wesker = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/wesker.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                wesker = pyautogui.locateOnScreen("wesker.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Wesker!")    
             try:
-                kongo = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/kongo.png", confidence = 0.9)
+                kongo = pyautogui.locateOnScreen("kongo.png", confidence = 0.9)
                 try:
-                    kongoRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/kongoRoom1.png", confidence = 0.9)
+                    kongoRoom1 = pyautogui.locateOnScreen("kongoRoom1.png", confidence = 0.9)
                     pyautogui.click(kongoRoom1)
                     time.sleep(1)
                 except pyautogui.ImageNotFoundException:
                     print("Not in kongo Room 0.")
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Kongo!")  
             try:
-                deathrealm = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/deathrealm.png", confidence = 0.9)
+                deathrealm = pyautogui.locateOnScreen("deathrealm.png", confidence = 0.9)
                 try:
-                    deathrealmRoom1Click1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/deathrealmRoom1Click1.png", confidence = 0.9)
+                    deathrealmRoom1Click1 = pyautogui.locateOnScreen("deathrealmRoom1Click1.png", confidence = 0.9)
                     pyautogui.click(deathrealmRoom1Click1)
                     time.sleep(4)
                 except pyautogui.ImageNotFoundException:
                     print("Not in deathrealm Room 0.")
                 try:
-                    deathrealmRoom1Click2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/deathrealmRoom1Click2.png", confidence = 0.9)
+                    deathrealmRoom1Click2 = pyautogui.locateOnScreen("deathrealmRoom1Click2.png", confidence = 0.9)
                     pyautogui.click(deathrealmRoom1Click2)
                     time.sleep(2)
                 except pyautogui.ImageNotFoundException:
                     print("Not in deathrealm Room 0.")
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Kongo!")
             try:
-                fraskfire = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/fraskfire.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                fraskfire = pyautogui.locateOnScreen("fraskfire.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Wesker!") 
             try:
-                ainzvariant = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/ainzvariant.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                ainzvariant = pyautogui.locateOnScreen("ainzvariant.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Ainzvariant!")
             try:
-                aqua = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/aqua.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                aqua = pyautogui.locateOnScreen("aqua.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Aqua!")    
             try:
-                fraskwinter = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/fraskwinter.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                fraskwinter = pyautogui.locateOnScreen("fraskwinter.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Fraskwinter!")
             try:
-                frasksand = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/frasksand.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                frasksand = pyautogui.locateOnScreen("frasksand.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Frasksand!")
             try:
-                universe = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/universe.png", confidence = 0.9)
-                bossStillAlive = 1
-                while bossStillAlive == 1 :
-                    genericAttack()
-                    try:
-                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
-                        pyautogui.click(yes)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")
-                    try:
-                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
-                        bossStillAlive = 0
-                    except pyautogui.ImageNotFoundException:
-                        print("Boss is still alive!")    
+                universe = pyautogui.locateOnScreen("universe.png", confidence = 0.9)
+                bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Universe!")
+            try:
+                perditioboss = pyautogui.locateOnScreen("perditioboss.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Perditioboss!")
 # There is no world boss at the moment.
         except pyautogui.ImageNotFoundException:
             print("No World Boss at the moment!")
