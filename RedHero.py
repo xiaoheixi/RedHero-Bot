@@ -30,7 +30,7 @@ def bossIsStillALive() :
         except pyautogui.ImageNotFoundException:
             print("Boss is still alive!")
 # Asking the user for task to perform.
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n5. Farm World Boss MAC\n")
 roomNumber = random.randint(11111,99999)
 if task == "1" :
     # Farming HCs
@@ -431,8 +431,171 @@ if task == "3" :
     programIsRunning = 1
     while programIsRunning == 1 :
         genericAttack()
+# Generic Attack 
 if task == "4" : 
     pyautogui.hotkey("alt", "tab")
     programIsRunning = 1
     while programIsRunning == 1 :
         genericAttack()
+# Farming world boss on MAC
+if task == "5" :
+    try:
+        redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
+        pyautogui.click(redHeroTaskBarIcon)
+    except pyautogui.ImageNotFoundException:
+        pyautogui.hotkey("alt", "tab")
+    programIsRunning = 1
+    while programIsRunning == 1 :
+        try :
+            join = pyautogui.locateOnScreen("Join.png", confidence = 0.8)
+            pyautogui.click(join)
+            time.sleep(3)
+            try:
+                drakath = pyautogui.locateOnScreen("drakath.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Drakath!")
+            # try:
+            #     firstspeaker = pyautogui.locateOnScreen("firstspeaker.png")
+            #     for seconds in range (1) :
+            #         genericAttack()
+            # except pyautogui.ImageNotFoundException:
+            #     print("Not Firstspeaker!")    
+            try:
+                red = pyautogui.locateOnScreen("red.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Red")
+            try:
+                paragonboss = pyautogui.locateOnScreen("paragonboss.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Paragon Boss!")    
+            try:
+                kuroshi = pyautogui.locateOnScreen("kuroshi.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Kuroshi!")  
+            try:
+                daemon = pyautogui.locateOnScreen("daemon.png", confidence = 0.9)
+                try:
+                    daemonRoom1 = pyautogui.locateOnScreen("daemonRoom1.png", confidence = 0.9)
+                    pyautogui.click(daemonRoom1)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in Daemon Room 0.")
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Daemon!")
+            try:
+                wesker = pyautogui.locateOnScreen("wesker.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Wesker!")    
+            try:
+                kongo = pyautogui.locateOnScreen("kongo.png", confidence = 0.9)
+                try:
+                    kongoRoom1 = pyautogui.locateOnScreen("kongoRoom1.png", confidence = 0.9)
+                    pyautogui.click(kongoRoom1)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in kongo Room 0.")
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Kongo!")  
+            try:
+                deathrealm = pyautogui.locateOnScreen("deathrealm.png", confidence = 0.9)
+                try:
+                    deathrealmRoom1Click1 = pyautogui.locateOnScreen("deathrealmRoom1Click1.png", confidence = 0.9)
+                    pyautogui.click(deathrealmRoom1Click1)
+                    time.sleep(4)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in deathrealm Room 0.")
+                try:
+                    deathrealmRoom1Click2 = pyautogui.locateOnScreen("deathrealmRoom1Click2.png", confidence = 0.9)
+                    pyautogui.click(deathrealmRoom1Click2)
+                    time.sleep(2)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in deathrealm Room 0.")
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Kongo!")
+            try:
+                fraskfire = pyautogui.locateOnScreen("fraskfire.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Wesker!") 
+            try:
+                ainzvariant = pyautogui.locateOnScreen("ainzvariant.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Ainzvariant!")
+            try:
+                aqua = pyautogui.locateOnScreen("aqua.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Aqua!")    
+            try:
+                fraskwinter = pyautogui.locateOnScreen("fraskwinter.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Fraskwinter!")
+            try:
+                frasksand = pyautogui.locateOnScreen("frasksand.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Frasksand!")
+            try:
+                universe = pyautogui.locateOnScreen("universe.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Universe!")
+            try:
+                perditioboss = pyautogui.locateOnScreen("perditioboss.png", confidence = 0.9)
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Perditioboss!")
+# There is no world boss at the moment.
+        except pyautogui.ImageNotFoundException:
+            print("No World Boss at the moment!")
+            for drops in range (6) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
+            try:
+                try:
+                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.8)
+                except pyautogui.ImageNotFoundException:
+                    pyautogui.write("/join orc-" + str(roomNumber))
+                    pyautogui.hotkey("enter")
+                    time.sleep(5)
+            except pyautogui.ImageNotFoundException:
+                print("Unable to join orc.")
+            try:
+                orcRoom1 = pyautogui.locateOnScreen("OrcRoom1.png", confidence = 0.8)
+                pyautogui.click(orcRoom1)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 0.")
+            try:
+                orcRoom2 = pyautogui.locateOnScreen("OrcRoom2.png", confidence = 0.9)
+                pyautogui.click(orcRoom2)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 1.")
+            try:
+                orcRoom3 = pyautogui.locateOnScreen("OrcRoom3.png", confidence = 0.9)
+                pyautogui.click(orcRoom3)
+                time.sleep(2)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 2.")
+            try:
+                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png")
+                pyautogui.click(orcRoom4)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 3.")
+            genericAttack()
