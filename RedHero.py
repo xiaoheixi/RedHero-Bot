@@ -1,6 +1,7 @@
 # Importing required libraries.
 import pyautogui
 import time
+import random
 # Generic Attack function
 def genericAttack() : 
     for attackDuration in range (2) :
@@ -30,6 +31,7 @@ def bossIsStillALive() :
             print("Boss is still alive!")
 # Asking the user for task to perform.
 task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n")
+roomNumber = random.randint(11111,99999)
 if task == "1" :
     # Farming HCs
     try:
@@ -388,7 +390,7 @@ if task == "2" :
                 try:
                     orc = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/orc.png")
                 except pyautogui.ImageNotFoundException:
-                    pyautogui.write("/join orc-68480")
+                    pyautogui.write("/join orc-" + str(roomNumber))
                     pyautogui.hotkey("enter")
                     time.sleep(5)
             except pyautogui.ImageNotFoundException:
