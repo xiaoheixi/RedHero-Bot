@@ -513,6 +513,24 @@ if task == "2" :
                         print("Boss is still alive!")    
             except pyautogui.ImageNotFoundException:
                 print("Not Frasksand!")
+            try:
+                universe = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/universe.png", confidence = 0.9)
+                bossStillAlive = 1
+                while bossStillAlive == 1 :
+                    genericAttack()
+                    try:
+                        yes = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Yes.png", confidence = 0.9)
+                        pyautogui.click(yes)
+                        bossStillAlive = 0
+                    except pyautogui.ImageNotFoundException:
+                        print("Boss is still alive!")
+                    try:
+                        town = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/town.png", confidence = 0.9)
+                        bossStillAlive = 0
+                    except pyautogui.ImageNotFoundException:
+                        print("Boss is still alive!")    
+            except pyautogui.ImageNotFoundException:
+                print("Not Universe!")
 # There is no world boss at the moment.
         except pyautogui.ImageNotFoundException:
             print("No World Boss at the moment!")
