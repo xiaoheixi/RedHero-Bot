@@ -504,7 +504,7 @@ if task == "6" :
                         except pyautogui.ImageNotFoundException:
                             print("No items left to claim.")
                     try:
-                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.9)
+                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.8)
                     except pyautogui.ImageNotFoundException:
                         pyautogui.write("/join pirateship-" + str(roomNumber))
                         pyautogui.hotkey("enter")
