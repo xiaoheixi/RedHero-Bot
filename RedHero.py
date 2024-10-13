@@ -87,15 +87,15 @@ def farmWorldBoss() :
     except pyautogui.ImageNotFoundException:
         print("Not Kongo!")  
     try:
-        deathrealm = pyautogui.locateOnScreen("deathrealm.png", confidence = 0.9)
+        deathrealm = pyautogui.locateOnScreen("deathrealm.png", confidence = 0.8)
         try:
-            deathrealmRoom1Click1 = pyautogui.locateOnScreen("deathrealmRoom1Click1.png", confidence = 0.9)
+            deathrealmRoom1Click1 = pyautogui.locateOnScreen("deathrealmRoom1Click1.png", confidence = 0.8)
             pyautogui.click(deathrealmRoom1Click1)
             time.sleep(4)
         except pyautogui.ImageNotFoundException:
             print("Not in deathrealm Room 0.")
         try:
-            deathrealmRoom1Click2 = pyautogui.locateOnScreen("deathrealmRoom1Click2.png", confidence = 0.9)
+            deathrealmRoom1Click2 = pyautogui.locateOnScreen("deathrealmRoom1Click2.png", confidence = 0.8)
             pyautogui.click(deathrealmRoom1Click2)
             time.sleep(2)
         except pyautogui.ImageNotFoundException:
