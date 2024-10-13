@@ -555,6 +555,17 @@ if task == "5" :
                 bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Perditioboss!")
+            try:
+                carnax = pyautogui.locateOnScreen("carnax.png", confidence = 0.9)
+                try:
+                    carnaxRoom1 = pyautogui.locateOnScreen("carnaxRoom1.png", confidence = 0.9)
+                    pyautogui.click(carnaxRoom1)
+                    time.sleep(2)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in carnax Room 0.")
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Kongo!")
 # There is no world boss at the moment.
         except pyautogui.ImageNotFoundException:
             print("No World Boss at the moment!")
