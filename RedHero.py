@@ -5,15 +5,11 @@ import random
 # Generic Attack function
 def genericAttack() : 
     for attackDuration in range (2) :
-        pyautogui.hotkey("5")
         time.sleep(0.3)
         pyautogui.hotkey("3")
         time.sleep(0.3)
         pyautogui.hotkey("4")
         time.sleep(0.3)
-        pyautogui.hotkey("2")
-        time.sleep(0.3)
-        pyautogui.hotkey("1")
 def bossIsStillALive() :
     bossStillAlive = 1
     while bossStillAlive == 1 :
@@ -30,7 +26,6 @@ def bossIsStillALive() :
         except pyautogui.ImageNotFoundException:
             print("Boss is still alive!")
 # Asking the user for task to perform.
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n5. Farm Uppercloud\n")
 roomNumber = random.randint(11111,99999)
 if task == "1" :
     # Farming HCs
@@ -437,7 +432,7 @@ if task == "4" :
     programIsRunning = 1
     while programIsRunning == 1 :
         genericAttack()
-# Farming Uppercloud
+# Farming world boss on MAC
 if task == "5" :
     try:
         redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
@@ -555,6 +550,17 @@ if task == "5" :
                 bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Perditioboss!")
+            try:
+                carnax = pyautogui.locateOnScreen("carnax.png", confidence = 0.9)
+                try:
+                    carnaxRoom1 = pyautogui.locateOnScreen("carnaxRoom1.png", confidence = 0.9)
+                    pyautogui.click(carnaxRoom1)
+                    time.sleep(2)
+                except pyautogui.ImageNotFoundException:
+                    print("Not in carnax Room 0.")
+                bossIsStillALive()
+            except pyautogui.ImageNotFoundException:
+                print("Not Kongo!")
 # There is no world boss at the moment.
         except pyautogui.ImageNotFoundException:
             print("No World Boss at the moment!")
@@ -563,15 +569,39 @@ if task == "5" :
                     yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
                     pyautogui.click(yes)
                     time.sleep(1)
-                except pyautogui.ImageNotFoundException:
+                except pyautogui.ImageNotFoundException:2
                     print("No items left to claim.")
             try:
                 try:
-                    uppercloud = pyautogui.locateOnScreen("uppercloud.png", confidence = 0.8)
+                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.9)
                 except pyautogui.ImageNotFoundException:
-                    pyautogui.write("/join uppercloud-" + str(roomNumber))
+                    pyautogui.write("/join orc-" + str(roomNumber))
                     pyautogui.hotkey("enter")
                     time.sleep(5)
             except pyautogui.ImageNotFoundException:
-                print("Unable to join uppercloud.")
+                print("Unable to join orc.")
+            try:
+                orcRoom1 = pyautogui.locateOnScreen("OrcRoom1.png", confidence = 0.8)
+                pyautogui.click(orcRoom1)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 0.")
+            try:
+                orcRoom2 = pyautogui.locateOnScreen("OrcRoom2.png", confidence = 0.9)
+                pyautogui.click(orcRoom2)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 1.")
+            try:
+                orcRoom3 = pyautogui.locateOnScreen("OrcRoom3.png", confidence = 0.9)
+                pyautogui.click(orcRoom3)
+                time.sleep(2)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 2.")
+            try:
+                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png")
+                pyautogui.click(orcRoom4)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in orc Room 3.")
             genericAttack()
