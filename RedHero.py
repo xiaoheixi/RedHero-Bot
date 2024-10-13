@@ -151,7 +151,7 @@ def farmWorldBoss() :
         print("Not Kongo!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n")
 if task == "1" :
     # Farming HCs
     try:
@@ -484,9 +484,9 @@ if task == "5" :
                 print("Prismata is not selected.")
             genericAttack()
 if task == "6" :
-    subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes")
+    subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
-        subSubTask = input("1. Kill Pirate")
+        subSubTask = input("1. Kill Pirate\n")
         if subSubTask == "1" : 
             pyautogui.hotkey("alt", "tab")
             programIsRunning = 1
