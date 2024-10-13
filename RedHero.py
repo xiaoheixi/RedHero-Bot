@@ -30,7 +30,7 @@ def bossIsStillALive() :
         except pyautogui.ImageNotFoundException:
             print("Boss is still alive!")
 # Asking the user for task to perform.
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n5. Farm World Boss MAC\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n5. Farm Uppercloud\n")
 roomNumber = random.randint(11111,99999)
 if task == "1" :
     # Farming HCs
@@ -555,17 +555,6 @@ if task == "5" :
                 bossIsStillALive()
             except pyautogui.ImageNotFoundException:
                 print("Not Perditioboss!")
-            try:
-                carnax = pyautogui.locateOnScreen("carnax.png", confidence = 0.9)
-                try:
-                    carnaxRoom1 = pyautogui.locateOnScreen("carnaxRoom1.png", confidence = 0.9)
-                    pyautogui.click(carnaxRoom1)
-                    time.sleep(2)
-                except pyautogui.ImageNotFoundException:
-                    print("Not in carnax Room 0.")
-                bossIsStillALive()
-            except pyautogui.ImageNotFoundException:
-                print("Not Kongo!")
 # There is no world boss at the moment.
         except pyautogui.ImageNotFoundException:
             print("No World Boss at the moment!")
@@ -578,7 +567,7 @@ if task == "5" :
                     print("No items left to claim.")
             try:
                 try:
-                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.9)
+                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.8)
                 except pyautogui.ImageNotFoundException:
                     pyautogui.write("/join orc-" + str(roomNumber))
                     pyautogui.hotkey("enter")
