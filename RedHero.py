@@ -504,27 +504,9 @@ if task == "6" :
                         except pyautogui.ImageNotFoundException:
                             print("No items left to claim.")
                     try:
-                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.8)
+                        pirate = pyautogui.locateOnScreen("pirate.png", confidence = 0.8)
                     except pyautogui.ImageNotFoundException:
-                        pyautogui.write("/join pirateship-" + str(roomNumber))
+                        pyautogui.write("/join pirate-" + str(roomNumber))
                         pyautogui.hotkey("enter")
                         time.sleep(5)
-                    try:
-                        pirateshipRoom1 = pyautogui.locateOnScreen("pirateshipRoom1.png", confidence = 0.8)
-                        pyautogui.click(pirateshipRoom1)
-                        time.sleep(3)
-                    except pyautogui.ImageNotFoundException:
-                        print("pirateshipRoom1 not found.")
-                    try:
-                        pirateshipRoom2 = pyautogui.locateOnScreen("pirateshipRoom2.png", confidence = 0.8)
-                        pyautogui.click(pirateshipRoom2)
-                        time.sleep(3)
-                    except pyautogui.ImageNotFoundException:
-                        print("pirateshipRoom2 not found.")
-                    try:
-                        pirateshipRoom3 = pyautogui.locateOnScreen("pirateshipRoom3.png", confidence = 0.8)
-                        pyautogui.click(pirateshipRoom3)
-                        time.sleep(3)
-                    except pyautogui.ImageNotFoundException:
-                        print("pirateshipRoom3 not found.")
-                    genericAttack()
+                    
