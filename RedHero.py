@@ -437,7 +437,7 @@ if task == "4" :
     programIsRunning = 1
     while programIsRunning == 1 :
         genericAttack()
-# Farming world boss on MAC
+# Farming Uppercloud
 if task == "5" :
     try:
         redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
@@ -567,35 +567,11 @@ if task == "5" :
                     print("No items left to claim.")
             try:
                 try:
-                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.8)
+                    uppercloud = pyautogui.locateOnScreen("uppercloud.png", confidence = 0.8)
                 except pyautogui.ImageNotFoundException:
-                    pyautogui.write("/join orc-" + str(roomNumber))
+                    pyautogui.write("/join uppercloud-" + str(roomNumber))
                     pyautogui.hotkey("enter")
                     time.sleep(5)
             except pyautogui.ImageNotFoundException:
-                print("Unable to join orc.")
-            try:
-                orcRoom1 = pyautogui.locateOnScreen("OrcRoom1.png", confidence = 0.8)
-                pyautogui.click(orcRoom1)
-                time.sleep(4)
-            except pyautogui.ImageNotFoundException:
-                print("Not in orc Room 0.")
-            try:
-                orcRoom2 = pyautogui.locateOnScreen("OrcRoom2.png", confidence = 0.9)
-                pyautogui.click(orcRoom2)
-                time.sleep(4)
-            except pyautogui.ImageNotFoundException:
-                print("Not in orc Room 1.")
-            try:
-                orcRoom3 = pyautogui.locateOnScreen("OrcRoom3.png", confidence = 0.9)
-                pyautogui.click(orcRoom3)
-                time.sleep(2)
-            except pyautogui.ImageNotFoundException:
-                print("Not in orc Room 2.")
-            try:
-                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png")
-                pyautogui.click(orcRoom4)
-                time.sleep(4)
-            except pyautogui.ImageNotFoundException:
-                print("Not in orc Room 3.")
+                print("Unable to join uppercloud.")
             genericAttack()
