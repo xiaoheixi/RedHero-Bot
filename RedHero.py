@@ -483,3 +483,48 @@ if task == "5" :
             except pyautogui.ImageNotFoundException:
                 print("Prismata is not selected.")
             genericAttack()
+if task == "6" :
+    subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes")
+    if subTask == "1" : 
+        subSubTask = input("1. Kill Pirate")
+        if subSubTask == "1" : 
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.9)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.write("/join pirateship-" + str(roomNumber))
+                        pyautogui.hotkey("enter")
+                        time.sleep(5)
+                    try:
+                        pirateshipRoom1 = pyautogui.locateOnScreen("pirateshipRoom1.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom1)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom1 not found.")
+                    try:
+                        pirateshipRoom2 = pyautogui.locateOnScreen("pirateshipRoom2.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom2)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom2 not found.")
+                    try:
+                        pirateshipRoom3 = pyautogui.locateOnScreen("pirateshipRoom3.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom3)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom3 not found.")
+                    genericAttack()
