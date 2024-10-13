@@ -578,7 +578,7 @@ if task == "5" :
                     print("No items left to claim.")
             try:
                 try:
-                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.8)
+                    orc = pyautogui.locateOnScreen("orc.png", confidence = 0.9)
                 except pyautogui.ImageNotFoundException:
                     pyautogui.write("/join orc-" + str(roomNumber))
                     pyautogui.hotkey("enter")
