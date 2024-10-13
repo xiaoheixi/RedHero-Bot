@@ -4,12 +4,16 @@ import time
 import random
 # Generic Attack function
 def genericAttack() : 
-    for attackDuration in range (2) :
+    for attackDuration in range (3) :
+        pyautogui.hotkey("5")
         time.sleep(0.3)
         pyautogui.hotkey("3")
         time.sleep(0.3)
         pyautogui.hotkey("4")
         time.sleep(0.3)
+        pyautogui.hotkey("2")
+        time.sleep(0.3)
+        pyautogui.hotkey("1")
 def bossIsStillALive() :
     bossStillAlive = 1
     while bossStillAlive == 1 :
