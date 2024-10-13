@@ -427,7 +427,7 @@ if task == "2" :
             except pyautogui.ImageNotFoundException:
                 print("Not in orc Room 2.")
             try:
-                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png")
+                orcRoom4 = pyautogui.locateOnScreen("OrcRoom4.png", confidence = 0.9)
                 pyautogui.click(orcRoom4)
                 time.sleep(4)
             except pyautogui.ImageNotFoundException:
