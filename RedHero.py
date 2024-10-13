@@ -569,7 +569,7 @@ if task == "5" :
                     yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
                     pyautogui.click(yes)
                     time.sleep(1)
-                except pyautogui.ImageNotFoundException:2
+                except pyautogui.ImageNotFoundException:
                     print("No items left to claim.")
             try:
                 try:
