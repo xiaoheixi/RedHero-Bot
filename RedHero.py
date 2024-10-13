@@ -27,6 +27,7 @@ def bossIsStillALive() :
             print("Boss is still alive!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP (MAC)\n4. Generic Attack\n5. Farm Uppercloud\n")
 if task == "1" :
     # Farming HCs
     try:
