@@ -486,8 +486,49 @@ if task == "5" :
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
-        subSubTask = input("1. Kill Pirate\n")
+        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n")
         if subSubTask == "1" : 
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.write("/join pirateship-" + str(roomNumber))
+                        pyautogui.hotkey("enter")
+                        time.sleep(5)
+                    try:
+                        pirateshipRoom1 = pyautogui.locateOnScreen("pirateshipRoom1.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom1)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom1 not found.")
+                    try:
+                        pirateshipRoom2 = pyautogui.locateOnScreen("pirateshipRoom2.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom2)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom2 not found.")
+                    try:
+                        pirateshipRoom3 = pyautogui.locateOnScreen("pirateshipRoom3.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom3)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("pirateshipRoom3 not found.")
+                    genericAttack()
+        if subSubTask == "2" : 
             pyautogui.hotkey("alt", "tab")
             programIsRunning = 1
             while (programIsRunning == 1) :
@@ -509,4 +550,102 @@ if task == "6" :
                         pyautogui.write("/join pirate-" + str(roomNumber))
                         pyautogui.hotkey("enter")
                         time.sleep(5)
-                    
+                    try:
+                        BERRYBERROY = pyautogui.locateOnScreen("BERRYBERROY.png", confidence = 0.8)
+                        pyautogui.click(BERRYBERROY)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Berry Berroy is not found.")   
+                    try:
+                        REWARDSTalklikeapirate = pyautogui.locateOnScreen("REWARDSTalklikeapirate.png", confidence = 0.8)
+                        pyautogui.click(REWARDSTalklikeapirate)
+                        time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find REWARDSTalklikeapirate.")
+                    try:
+                        misc = pyautogui.locateOnScreen("misc.png", confidence = 0.9)
+                        pyautogui.click(misc)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find misc.")
+                    try:
+                        PirateTicket = pyautogui.locateOnScreen("PirateTicket.png", confidence = 0.8)
+                        pyautogui.click(PirateTicket)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Pirate Ticket.")
+                    for buyCount in range (10) : 
+                        try:
+                            Buy = pyautogui.locateOnScreen("Buy.png", confidence = 0.8)
+                            pyautogui.click(Buy)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find Buy.")
+                        try:
+                            Yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.7)
+                            pyautogui.click(Yes)
+                            time.sleep(2)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find Yes.")
+                    for xCount in range (1) : 
+                        try:
+                            x = pyautogui.locateOnScreen("x.png", confidence = 0.8)
+                            pyautogui.click(x)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find x.")
+                    try:
+                        ADVENTUREQuests = pyautogui.locateOnScreen("ADVENTUREQuests.png", confidence = 0.8)
+                        pyautogui.click(ADVENTUREQuests)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find ADVENTUREQuests.")      
+                    try:
+                        GambleOrDie = pyautogui.locateOnScreen("GambleOrDie.png", confidence = 0.8)
+                        pyautogui.click(GambleOrDie)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Gamble Or Die.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try:
+                        GambleOrDie = pyautogui.locateOnScreen("GambleOrDie.png", confidence = 0.8)
+                        pyautogui.click(GambleOrDie)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Gamble Or Die.")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png")
+                        pyautogui.click(TurnIn)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In!")
+                    try:
+                        one = pyautogui.locateOnScreen("1.png", confidence = 0.8)
+                        pyautogui.click(one)
+                        time.sleep(1)
+                        pyautogui.hotkey("0")
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find 1.")
+                    try:
+                        Yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.7)
+                        pyautogui.click(Yes)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Yes.")
+                    try:
+                        Yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.7)
+                        pyautogui.click(Yes)
+                        time.sleep(2)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Yes.")
+                    try:
+                        x = pyautogui.locateOnScreen("x.png", confidence = 0.8)
+                        pyautogui.click(x)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find x.")
