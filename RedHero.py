@@ -713,7 +713,7 @@ if task == "6" :
                     try:
                         piratebeachRoom2 = pyautogui.locateOnScreen("piratebeachRoom2.png", confidence = 0.9)
                         pyautogui.click(piratebeachRoom2)
-                        time.sleep(4)
+                        time.sleep(5)
                     except pyautogui.ImageNotFoundException:
                         print("Not in piratebeachroom1.")
                     try:
@@ -735,7 +735,7 @@ if task == "6" :
                         time.sleep(5)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Turn In.")
-                    for drops in range (3) : 
+                    for drops in range (4) : 
                         try:
                             yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
                             pyautogui.click(yes)
