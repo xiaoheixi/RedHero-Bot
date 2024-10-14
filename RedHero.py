@@ -950,7 +950,7 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Accept.")
                     try:
-                        WreckTokenFreeOption = pyautogui.locateOnScreen("WreckTokenFreeOption.png", confidence = 0.9)
+                        WreckTokenFreeOption = pyautogui.locateOnScreen("WreckTokenFreeOption.png", confidence = 0.8)
                         pyautogui.click(WreckTokenFreeOption)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
