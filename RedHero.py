@@ -954,7 +954,7 @@ if task == "6" :
                         pyautogui.click(WreckTokenFreeOption)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Cannot find WreckToken (Free Option).")
+                        print("Cannot find Wreck Token (Free Option).")
                     try:
                         accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
                         pyautogui.click(accept)
@@ -967,6 +967,12 @@ if task == "6" :
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
                         pyautogui.hotkey("l")
+                        try:
+                            WingsFish = pyautogui.locateOnScreen("WingsFish.png", confidence = 0.9)
+                            pyautogui.click(WingsFish)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find Wings Fish.")
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
                         pyautogui.click(TurnIn)
@@ -979,6 +985,12 @@ if task == "6" :
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
                         pyautogui.hotkey("l")
+                        try:
+                            WreckTokenFreeOption = pyautogui.locateOnScreen("WreckTokenFreeOption.png", confidence = 0.9)
+                            pyautogui.click(WreckTokenFreeOption)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find Wreck Token (Free Option)")
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
                         pyautogui.click(TurnIn)
