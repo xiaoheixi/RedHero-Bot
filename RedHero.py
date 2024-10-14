@@ -487,6 +487,7 @@ if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
         subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n")
+# Kill Pirate
         if subSubTask == "1" : 
             pyautogui.hotkey("alt", "tab")
             programIsRunning = 1
@@ -528,6 +529,7 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException:
                         print("pirateshipRoom3 not found.")
                     genericAttack()
+# Hangout Pirate Token
         if subSubTask == "2" : 
             pyautogui.hotkey("alt", "tab")
             programIsRunning = 1
@@ -559,7 +561,7 @@ if task == "6" :
                     try:
                         REWARDSTalklikeapirate = pyautogui.locateOnScreen("REWARDSTalklikeapirate.png", confidence = 0.8)
                         pyautogui.click(REWARDSTalklikeapirate)
-                        time.sleep(4)
+                        time.sleep(5)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find REWARDSTalklikeapirate.")
                     try:
@@ -634,13 +636,13 @@ if task == "6" :
                     try:
                         Yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.7)
                         pyautogui.click(Yes)
-                        time.sleep(1)
+                        time.sleep(5)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Yes.")
                     try:
                         Yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.7)
                         pyautogui.click(Yes)
-                        time.sleep(2)
+                        time.sleep(1)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Yes.")
                     try:
