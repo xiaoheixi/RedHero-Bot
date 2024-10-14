@@ -675,6 +675,12 @@ if task == "6" :
                         pyautogui.hotkey("enter")
                         time.sleep(5)
                     try:
+                        x = pyautogui.locateOnScreen("x.png", confidence = 0.8)
+                        pyautogui.click(x)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find x.")
+                    try:
                         npc = pyautogui.locateOnScreen("npc.png", confidence = 0.8)
                         pyautogui.click(npc)
                         time.sleep(1)
