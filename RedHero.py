@@ -491,7 +491,7 @@ if task == "5" :
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
-        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n")
+        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle")
 # Kill Pirate
         if subSubTask == "1" : 
             pyautogui.hotkey("alt", "tab")
@@ -736,6 +736,83 @@ if task == "6" :
                         print("Cannot find Aquamancer Defeat.")
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.9)
+                        pyautogui.click(TurnIn)
+                        time.sleep(5)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In.")
+                    for drops in range (4) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+# Alpha Particle
+        if subSubTask == "4" : 
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        piratetown = pyautogui.locateOnScreen("piratetown.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.write("/join piratetown-" + str(roomNumber))
+                        pyautogui.hotkey("enter")
+                        time.sleep(5)
+                    try:
+                        Assile = pyautogui.locateOnScreen("Assile.png", confidence = 0.8)
+                        pyautogui.click(Assile)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Assile is not found.")   
+                    try:
+                        Quest = pyautogui.locateOnScreen("Quest.png", confidence = 0.8)
+                        pyautogui.click(Quest)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Quest.")
+                    try:
+                        AlphaPirateDuel = pyautogui.locateOnScreen("AlphaPirateDuel.png", confidence = 0.9)
+                        pyautogui.click(AlphaPirateDuel)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Alpha Pirate Duel.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try:
+                        piratetownRoom1 = pyautogui.locateOnScreen("piratetownRoom1.png", confidence = 0.9)
+                        pyautogui.click(piratetownRoom1)
+                        time.sleep(5)
+                        pirateTownRoom = 1
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in piratetownRoom1.")
+                    pyautogui.hotkey("1")
+                    time.sleep(1)
+                    pyautogui.hotkey("2")
+                    time.sleep(1)
+                    try:
+                        AlphaPirateDuel = pyautogui.locateOnScreen("AlphaPirateDuel.png", confidence = 0.9)
+                        pyautogui.click(AlphaPirateDuel)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.hotkey("l")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
                         pyautogui.click(TurnIn)
                         time.sleep(5)
                     except pyautogui.ImageNotFoundException:
