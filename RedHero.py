@@ -154,6 +154,12 @@ def farmWorldBoss() :
         bossIsStillALive()
     except pyautogui.ImageNotFoundException:
         print("Not Ultimate!")
+    try:
+        Respawn = pyautogui.locateOnScreen("Respawn.png", confidence = 0.9)
+        pyautogui.click(Respawn)
+        time.sleep(1)
+    except pyautogui.ImageNotFoundException:
+        print("Still alive!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
 task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n")
