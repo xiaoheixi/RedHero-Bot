@@ -926,29 +926,23 @@ if task == "6" :
                         except pyautogui.ImageNotFoundException:
                             print("No items left to claim.")
                     try:
-                        piratetown = pyautogui.locateOnScreen("piratetown.png", confidence = 0.8)
+                        shipwreck = pyautogui.locateOnScreen("shipwreck.png", confidence = 0.8)
                     except pyautogui.ImageNotFoundException:
-                        pyautogui.write("/join piratetown-" + str(roomNumber))
+                        pyautogui.write("/join shipwreck-" + str(roomNumber))
                         pyautogui.hotkey("enter")
-                        time.sleep(5)
+                        time.sleep(5) 
                     try:
-                        Assile = pyautogui.locateOnScreen("Assile.png", confidence = 0.8)
-                        pyautogui.click(Assile)
-                        time.sleep(1)
-                    except pyautogui.ImageNotFoundException:
-                        print("Assile is not found.")   
-                    try:
-                        Quest = pyautogui.locateOnScreen("Quest.png", confidence = 0.8)
-                        pyautogui.click(Quest)
+                        Quest2 = pyautogui.locateOnScreen("Quest2.png", confidence = 0.8)
+                        pyautogui.click(Quest2)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Quest.")
                     try:
-                        GroggageddonDefeated = pyautogui.locateOnScreen("GroggageddonDefeated.png", confidence = 0.9)
-                        pyautogui.click(GroggageddonDefeated)
+                        WingsFish = pyautogui.locateOnScreen("WingsFish.png", confidence = 0.9)
+                        pyautogui.click(WingsFish)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Cannot find Groggageddon Defeated.")
+                        print("Cannot find Wings Fish.")
                     try:
                         accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
                         pyautogui.click(accept)
@@ -956,20 +950,20 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Accept.")
                     try:
-                        piratetownRoom1 = pyautogui.locateOnScreen("piratetownRoom1.png", confidence = 0.9)
-                        pyautogui.click(piratetownRoom1)
-                        time.sleep(5)
-                        pyautogui.click(piratetownRoom1)
-                        time.sleep(5)
+                        WreckTokenFreeOption = pyautogui.locateOnScreen("WreckTokenFreeOption.png", confidence = 0.9)
+                        pyautogui.click(WreckTokenFreeOption)
+                        time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Not in piratetownRoom1.")
-                    pyautogui.hotkey("1")
-                    time.sleep(1)
-                    pyautogui.hotkey("2")
-                    time.sleep(1)
+                        print("Cannot find WreckToken (Free Option).")
                     try:
-                        GroggageddonDefeated = pyautogui.locateOnScreen("GroggageddonDefeated.png", confidence = 0.9)
-                        pyautogui.click(GroggageddonDefeated)
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try:
+                        WingsFish = pyautogui.locateOnScreen("WingsFish.png", confidence = 0.9)
+                        pyautogui.click(WingsFish)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
                         pyautogui.hotkey("l")
@@ -979,6 +973,19 @@ if task == "6" :
                         time.sleep(5)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Turn In.")
+                    try:
+                        WreckTokenFreeOption = pyautogui.locateOnScreen("WreckTokenFreeOption.png", confidence = 0.9)
+                        pyautogui.click(WreckTokenFreeOption)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.hotkey("l")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
+                        pyautogui.click(TurnIn)
+                        time.sleep(5)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In.")
+                    genericAttack()
                     for drops in range (4) : 
                         try:
                             yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
