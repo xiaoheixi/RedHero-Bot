@@ -497,7 +497,7 @@ if task == "5" :
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
-        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle\n5. Key Groggag\n6. Wreck Token\n")
+        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle\n5. Key Groggag\n6. Wreck Token\n7. Pirates on the Beach\n")
 # Kill Pirate
         if subSubTask == "1" : 
             pyautogui.hotkey("alt", "tab")
@@ -991,6 +991,99 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Turn In.")
                     for drops in range (4) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")   
+# Pirates on the Beach
+        if subSubTask == "7" : 
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        piratebeach = pyautogui.locateOnScreen("piratebeach.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.write("/join shipwreck-" + str(roomNumber))
+                        pyautogui.hotkey("enter")
+                        time.sleep(5) 
+                    try:
+                        Quest2 = pyautogui.locateOnScreen("Quest2.png", confidence = 0.8)
+                        pyautogui.click(Quest2)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Quest.")
+                    try:
+                        IntheSea = pyautogui.locateOnScreen("IntheSea.png", confidence = 0.9)
+                        pyautogui.click(IntheSea)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find In the Sea.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try:
+                        piratebeach = pyautogui.locateOnScreen("piratebeach.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        pyautogui.write("/join piratebeach-" + str(roomNumber))
+                        pyautogui.hotkey("enter")
+                        time.sleep(5) 
+                    try:
+                        piratebeachRoom1 = pyautogui.locateOnScreen("piratebeachRoom1.png", confidence = 0.8)
+                        pyautogui.click(piratebeachRoom1)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in piratebeachroom0.")
+                    try:
+                        piratebeachRoom2 = pyautogui.locateOnScreen("piratebeachRoom2.png", confidence = 0.8)
+                        try:
+                            pirateCrew = pyautogui.locateOnScreen("PIRATECREW.png", confidence = 0.6)
+                            print("In the correct room!")
+                        except pyautogui.ImageNotFoundException:
+                            pyautogui.click(piratebeachRoom2)
+                            time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in piratebeachroom1.")
+                    try:
+                        piratebeachRoom3 = pyautogui.locateOnScreen("piratebeachRoom3.png", confidence = 0.9)
+                        pyautogui.click(piratebeachRoom3)
+                        time.sleep(3)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in piratebeachRoom2.")    
+                    genericAttack()
+                    try:
+                        IntheSea = pyautogui.locateOnScreen("IntheSea.png", confidence = 0.9)
+                        pyautogui.click(IntheSea)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find In the Sea.")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
+                        pyautogui.click(TurnIn)
+                        time.sleep(5)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In.")
+                        pyautogui.hotkey("l")
+                        time.sleep(1)
+                        pyautogui.hotkey("l")
+                        time.sleep(1)
+                    for drops in range(4) : 
                         try:
                             yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
                             pyautogui.click(yes)
