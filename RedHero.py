@@ -1081,8 +1081,6 @@ if task == "6" :
                         print("Cannot find Turn In.")
                         pyautogui.hotkey("l")
                         time.sleep(1)
-                        pyautogui.hotkey("l")
-                        time.sleep(1)
                     for drops in range(4) : 
                         try:
                             yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
