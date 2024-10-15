@@ -1076,7 +1076,7 @@ if task == "6" :
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
                         pyautogui.click(TurnIn)
-                        time.sleep(5)
+                        time.sleep(6)
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Turn In.")
                         pyautogui.hotkey("l")
