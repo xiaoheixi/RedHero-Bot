@@ -1142,11 +1142,11 @@ if task == "6" :
                         print("Not in shipwreckRoom1.")   
                     genericAttack()
                     try:
-                        DefeatTheKraken = pyautogui.locateOnScreen("DefeatTheKraken.png", confidence = 0.9)
-                        pyautogui.click(DefeatTheKraken)
+                        DefeatTheKrakenComplete = pyautogui.locateOnScreen("DefeatTheKrakenComplete.png", confidence = 0.9)
+                        pyautogui.click(DefeatTheKrakenComplete)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Cannot find Defeat The Kraken.")
+                        print("Defeat The Kraken is not complete.")
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
                         pyautogui.click(TurnIn)
