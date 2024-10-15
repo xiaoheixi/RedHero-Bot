@@ -497,7 +497,7 @@ if task == "5" :
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
-        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle\n5. Key Groggag\n6. Wreck Token\n7. Pirates on the Beach\n")
+        subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle\n5. Key Groggag\n6. Wreck Token\n7. Pirates on the Beach\n8. Kraken Raid\n")
 # Kill Pirate
         if subSubTask == "1" : 
             pyautogui.hotkey("alt", "tab")
@@ -1088,3 +1088,77 @@ if task == "6" :
                             time.sleep(1)
                         except pyautogui.ImageNotFoundException:
                             print("No items left to claim.")   
+# Kraken Raid
+        if subSubTask == "8" : 
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        shipwreck1 = pyautogui.locateOnScreen("shipwreck1.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        try:
+                            shipwreck = pyautogui.locateOnScreen("shipwreck.png", confidence = 0.8)
+                        except pyautogui.ImageNotFoundException:
+                            pyautogui.write("/join shipwreck-" + str(roomNumber))
+                            pyautogui.hotkey("enter")
+                            time.sleep(5) 
+                    try:
+                        Quest2 = pyautogui.locateOnScreen("Quest2.png", confidence = 0.8)
+                        pyautogui.click(Quest2)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Quest.")
+                    try:
+                        DefeatTheKraken = pyautogui.locateOnScreen("DefeatTheKraken.png", confidence = 0.9)
+                        pyautogui.click(DefeatTheKraken)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Defeat The Kraken.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try:
+                        shipwreckRoom1 = pyautogui.locateOnScreen("shipwreckRoom1.png", confidence = 0.8)
+                        pyautogui.click(shipwreckRoom1)
+                        time.sleep(4)
+                        pyautogui.click(shipwreckRoom1)
+                        time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in shipwreckRoom1.")   
+                    genericAttack()
+                    try:
+                        DefeatTheKraken = pyautogui.locateOnScreen("DefeatTheKraken.png", confidence = 0.9)
+                        pyautogui.click(DefeatTheKraken)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Defeat The Kraken.")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
+                        pyautogui.click(TurnIn)
+                        time.sleep(6)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In.")
+                        pyautogui.hotkey("l")
+                        time.sleep(1)
+                    for drops in range(4) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
