@@ -494,6 +494,13 @@ if task == "5" :
             except pyautogui.ImageNotFoundException:
                 print("Prismata is not selected.")
             genericAttack()
+            for drops in range (3) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
     if subTask == "1" : 
