@@ -1233,7 +1233,7 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find Accept.")
                     try :
-                        pirateship = pyautogui.locateOnScreen("pirateship.png")
+                        piratebeach = pyautogui.locateOnScreen("piratebeach.png", confidence = 0.8)
                         pyautogui.write("/join pirateship-" + str(roomNumber))
                         pyautogui.hotkey("Enter")
                         time.sleep(5)
