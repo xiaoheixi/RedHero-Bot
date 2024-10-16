@@ -15,6 +15,13 @@ def genericAttack() :
         time.sleep(0.3)
         pyautogui.hotkey("1")
 def bossIsStillALive() :
+    for drops in range (2) : 
+        try:
+            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+            pyautogui.click(yes)
+            time.sleep(1)
+        except pyautogui.ImageNotFoundException:
+            print("No items left to claim.")
     bossStillAlive = 1
     while bossStillAlive == 1 :
         genericAttack()
