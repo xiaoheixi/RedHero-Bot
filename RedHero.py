@@ -1195,4 +1195,42 @@ if task == "7" :
                 pyautogui.write("/join dwakel-" + str(roomNumber))
                 pyautogui.hotkey("enter")
                 time.sleep(5)
-            
+            try:
+                dwakelRoom1 = pyautogui.locateOnScreen("dwakelRoom1.png", confidence = 0.9)
+                pyautogui.click(dwakelRoom1)
+                time.sleep(2)
+            except pyautogui.ImageNotFoundException:
+                print("Not in Dwakel Room 0.")
+            try:
+                hideChatPane = pyautogui.locateOnScreen("hideChatPane.png", confidence = 0.9)
+                pyautogui.click(hideChatPane)
+                time.sleep(1)
+            except pyautogui.ImageNotFoundException:
+                print("Cannot hide the chat pane.")
+            try:
+                dwakelRoom2 = pyautogui.locateOnScreen("dwakelRoom2.png", confidence = 0.9)
+                pyautogui.click(dwakelRoom2)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in Dwakel Room 1.")
+            try:
+                dwakelRoom3 = pyautogui.locateOnScreen("dwakelRoom3.png", confidence = 0.9)
+                pyautogui.click(dwakelRoom3)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in Dwakel Room 2.")
+            genericAttack()
+            try:
+                dwakelRoom4 = pyautogui.locateOnScreen("dwakelRoom4.png", confidence = 0.9)
+                pyautogui.click(dwakelRoom4)
+                time.sleep(4)
+            except pyautogui.ImageNotFoundException:
+                print("Not in Dwakel Room 3.")
+            genericAttack()
+            for drops in range (6) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
