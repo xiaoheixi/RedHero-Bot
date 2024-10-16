@@ -501,8 +501,10 @@ if task == "5" :
                     time.sleep(1)
                 except pyautogui.ImageNotFoundException:
                     print("No items left to claim.")
+# Farming Hermes
 if task == "6" :
     subTask = input("1. Glyph Boat\n2. Glyph Hael\n3. Glyph Tent\n4. Glyph Tree\n5. Glyph Voxel\n6. Symbol Fiend Nation Hermes\n7. Symbol Ice Hermes\n")
+# Glyph Boat
     if subTask == "1" : 
         subSubTask = input("1. Kill Pirate\n2. Hangout Pirate Token\n3. Aquamancer Particle\n4. Alpha Particle\n5. Key Groggag\n6. Wreck Token\n7. Pirates on the Beach\n8. Kraken Raid\n")
 # Kill Pirate
@@ -1156,6 +1158,108 @@ if task == "6" :
                         print("Defeat The Kraken is not complete.")
                     try:
                         TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.8)
+                        pyautogui.click(TurnIn)
+                        time.sleep(6)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Turn In.")
+                        pyautogui.hotkey("l")
+                        time.sleep(1)
+                    for drops in range(4) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+# Glyph Hael
+    if subTask == "2" : 
+        subSubTask = input("1. Guest Eros\n")
+# Guest Eros
+        if subSubTask == "1":
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        pirateship = pyautogui.locateOnScreen("pirateship.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException:
+                        try:
+                            piratebeach = pyautogui.locateOnScreen("piratebeach.png", confidence = 0.8)
+                        except pyautogui.ImageNotFoundException:
+                            pyautogui.write("/join piratebeach-" + str(roomNumber))
+                            pyautogui.hotkey("enter")
+                            time.sleep(5) 
+                    try:
+                        npc = pyautogui.locateOnScreen("npc.png", confidence = 0.8)
+                        pyautogui.click(npc)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Deep.")
+                    try:
+                        ADVENTUREQuests = pyautogui.locateOnScreen("ADVENTUREQuests.png", confidence = 0.8)
+                        pyautogui.click(ADVENTUREQuests)
+                        time.sleep(2)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find ADVENTURE Quests.")
+                    try:
+                        UndeadPiratesDestroy = pyautogui.locateOnScreen("UndeadPiratesDestroy.png", confidence = 0.8)
+                        pyautogui.click(UndeadPiratesDestroy)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Undead Pirates Destroy.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                        pyautogui.hotkey("l")
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find Accept.")
+                    try :
+                        pirateship = pyautogui.locateOnScreen("pirateship.png")
+                        pyautogui.write("/join pirateship-" + str(roomNumber))
+                        pyautogui.hotkey("Enter")
+                        time.sleep(5)
+                    except pyautogui.ImageNotFoundException:
+                        print("Already in the correct room.")
+                    try:
+                        pirateshipRoom1 = pyautogui.locateOnScreen("pirateshipRoom1.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom1)
+                        time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in pirateshipRoom0.")
+                    try:
+                        pirateshipRoom2 = pyautogui.locateOnScreen("pirateshipRoom2.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom2)
+                        time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in pirateshipRoom1.") 
+                    try:
+                        pirateshipRoom3 = pyautogui.locateOnScreen("pirateshipRoom3.png", confidence = 0.8)
+                        pyautogui.click(pirateshipRoom3)
+                        time.sleep(4)
+                    except pyautogui.ImageNotFoundException:
+                        print("Not in pirateshipRoom2.") 
+                    genericAttack()
+                    try:
+                        pyautogui.hotkey("l")
+                        UndeadPiratesDestroyComplete = pyautogui.locateOnScreen("UndeadPiratesDestroyComplete.png", confidence = 0.6)
+                        pyautogui.click(UndeadPiratesDestroyComplete)
+                        time.sleep(2)
+                    except pyautogui.ImageNotFoundException:
+                        print("Undead Pirates Destroy not complete.")
+                    try:
+                        TurnIn = pyautogui.locateOnScreen("TurnIn.png", confidence = 0.9)
                         pyautogui.click(TurnIn)
                         time.sleep(6)
                     except pyautogui.ImageNotFoundException:
