@@ -174,7 +174,7 @@ def farmWorldBoss() :
         print("Not emotes!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n7. Farm Dwakel\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n7. Farm Dwakel\n8. Guild Raids\n")
 if task == "1" :
     # Farming HCs
     try:
@@ -1442,3 +1442,92 @@ if task == "7" :
                     time.sleep(1)
                 except pyautogui.ImageNotFoundException:
                     print("No items left to claim.")
+# Guild Raids
+if task == "8" :
+    subTask = input("1. Galdon\n2. Sunken\n3. Ginkotsu\n4. Kawte\n5. Syvoid\n6. Cold\n")
+    if subTask == "1" : 
+        pyautogui.hotkey("alt", "tab")
+        pyautogui.write("/join galdon")
+        pyautogui.press("Enter")
+        time.sleep(5)
+        try:
+            galdonRoom1 = pyautogui.locateOnScreen("galdonRoom1.png", confidence = 0.8)
+            pyautogui.click(galdonRoom1)
+            time.sleep(1)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom0.")
+        genericAttack()
+        try:
+            galdonRoom2 = pyautogui.locateOnScreen("galdonRoom2.png", confidence = 0.8)
+            pyautogui.click(galdonRoom2)
+            time.sleep(1)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom1.")
+        try:
+            galdonRoom2Click1 = pyautogui.locateOnScreen("galdonRoom2Click1.png", confidence = 0.8)
+            pyautogui.click(galdonRoom2Click1)
+            time.sleep(3)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom1.")
+        try:
+            galdonRoom2Click2 = pyautogui.locateOnScreen("galdonRoom2Click2.png", confidence = 0.9)
+            pyautogui.click(galdonRoom2Click2)
+            time.sleep(3)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom1.")
+        genericAttack()
+        try:
+            galdonRoom3 = pyautogui.locateOnScreen("galdonRoom3.png", confidence = 0.9)
+            pyautogui.click(galdonRoom3)
+            time.sleep(4)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom2.")
+        try:
+            galdonRoom3Click1 = pyautogui.locateOnScreen("galdonRoom3Click1.png", confidence = 0.8)
+            pyautogui.click(galdonRoom3Click1)
+            time.sleep(2)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom2.")
+        genericAttack()
+        try:
+            galdonRoom4 = pyautogui.locateOnScreen("galdonRoom4.png", confidence = 0.9)
+            pyautogui.click(galdonRoom4)
+            time.sleep(4)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom3.")
+        try:
+            galdonRoom4Click1 = pyautogui.locateOnScreen("galdonRoom4Click1.png", confidence = 0.8)
+            pyautogui.click(galdonRoom4Click1)
+            time.sleep(4)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom3.")
+        genericAttack()
+        try:
+            galdonRoom5 = pyautogui.locateOnScreen("galdonRoom5.png", confidence = 0.8)
+            pyautogui.click(galdonRoom5)
+            time.sleep(4)
+            genericAttack()
+            pyautogui.click(galdonRoom5)
+            time.sleep(4)
+            genericAttack()
+            pyautogui.click(galdonRoom5)
+            time.sleep(4)
+            genericAttack()
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom4.")
+        for drops in range (3) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
+        try:
+            galdonRoom6 = pyautogui.locateOnScreen("galdonRoom6.png", confidence = 0.8)
+            pyautogui.click(galdonRoom6)
+            time.sleep(2)
+        except pyautogui.ImageNotFoundException:
+            print("Not in galdonRoom5.")
+        for genericAttackDuration in range(15) :
+            genericAttack()
+        
