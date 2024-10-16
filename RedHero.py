@@ -167,6 +167,11 @@ def farmWorldBoss() :
         bossIsStillALive()
     except pyautogui.ImageNotFoundException:
         print("Not Ultimate!")
+    try:
+        emotes = pyautogui.locateOnScreen("emotes.png", confidence = 0.9)
+        bossIsStillALive()
+    except pyautogui.ImageNotFoundException:
+        print("Not emotes!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
 task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n7. Farm Dwakel\n")
@@ -1180,7 +1185,7 @@ if task == "6" :
                             print("No items left to claim.")
 # Glyph Hael
     if subTask == "2" : 
-        subSubTask = input("1. Guest Eros\n")
+        subSubTask = input("1. Guest Eros\n2. Forest Soul Priest\n")
 # Guest Eros
         if subSubTask == "1":
             pyautogui.hotkey("alt", "tab")
@@ -1273,6 +1278,67 @@ if task == "6" :
                         print("Cannot find Turn In.")
                         pyautogui.hotkey("l")
                         time.sleep(1)
+                    for drops in range(4) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+# Forest Soul Priest
+        if subSubTask == "2":
+            pyautogui.hotkey("alt", "tab")
+            programIsRunning = 1
+            while (programIsRunning == 1) :
+                try : 
+                    farmWorldBoss()
+                # There is no world boss at the moment.
+                except pyautogui.ImageNotFoundException:
+                    print("No World Boss at the moment!")
+                    for drops in range (6) : 
+                        try:
+                            yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                            pyautogui.click(yes)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("No items left to claim.")
+                    try:
+                        forest = pyautogui.locateOnScreen("forest.png", confidence = 0.8)
+                    except pyautogui.ImageNotFoundException: 
+                        pyautogui.write("/join forest-" + str(roomNumber))
+                        pyautogui.hotkey("Enter")
+                    try:
+                        RapHael = pyautogui.locateOnScreen("RapHael.png", confidence = 0.8)
+                        pyautogui.click(RapHael)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("No items left to claim.")
+                    try:
+                        ADVENTUREQuests1 = pyautogui.locateOnScreen("ADVENTUREQuests1.png", confidence = 0.8)
+                        pyautogui.click(ADVENTUREQuests1)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find ADVENTURE Quests.")
+                    try:
+                        FarmForestToken = pyautogui.locateOnScreen("FarmForestToken.png", confidence = 0.8)
+                        pyautogui.click(FarmForestToken)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find ADVENTURE Quests.")
+                    try:
+                        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
+                        pyautogui.click(accept)
+                        time.sleep(1)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find ADVENTURE Quests.")
+                    try:
+                        forestRoom1 = pyautogui.locateOnScreen("forestRoom1.png", confidence = 0.8)
+                        pyautogui.click(forestRoom1)
+                        time.sleep(5)
+                        pyautogui.click(forestRoom1)
+                        time.sleep(5)
+                    except pyautogui.ImageNotFoundException:
+                        print("Cannot find forestRoom1.")
                     for drops in range(4) : 
                         try:
                             yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
