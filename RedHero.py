@@ -162,7 +162,7 @@ def farmWorldBoss() :
         print("Not Ultimate!")
 # Asking the user for task to perform.
 roomNumber = random.randint(11111,99999)
-task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n")
+task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. Farm Uppercloud\n6. Farm Hermes\n7. Farm Dwakel\n")
 if task == "1" :
     # Farming HCs
     try:
@@ -1169,3 +1169,30 @@ if task == "6" :
                             time.sleep(1)
                         except pyautogui.ImageNotFoundException:
                             print("No items left to claim.")
+# Farming Dwakel
+if task == "7" :
+    try:
+        redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
+        pyautogui.click(redHeroTaskBarIcon)
+    except pyautogui.ImageNotFoundException:
+        pyautogui.hotkey("alt", "tab")
+    programIsRunning = 1
+    while programIsRunning == 1 :
+        try : 
+            farmWorldBoss()
+        except :
+            print("No World Boss at the moment!")
+            for drops in range (6) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
+            try:
+                dwakel = pyautogui.locateOnScreen("dwakel.png", confidence = 0.8)
+            except pyautogui.ImageNotFoundException:
+                pyautogui.write("/join dwakel-" + str(roomNumber))
+                pyautogui.hotkey("enter")
+                time.sleep(5)
+            
