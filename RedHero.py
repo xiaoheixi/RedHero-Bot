@@ -1223,7 +1223,7 @@ if task == "7" :
             try:
                 dwakelRoom4 = pyautogui.locateOnScreen("dwakelRoom4.png", confidence = 0.9)
                 pyautogui.click(dwakelRoom4)
-                time.sleep(4)
+                time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Not in Dwakel Room 3.")
             genericAttack()
