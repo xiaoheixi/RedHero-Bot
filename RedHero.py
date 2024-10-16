@@ -1307,6 +1307,7 @@ if task == "6" :
                     except pyautogui.ImageNotFoundException: 
                         pyautogui.write("/join forest-" + str(roomNumber))
                         pyautogui.hotkey("Enter")
+                        time.sleep(5)
                     try:
                         RapHael = pyautogui.locateOnScreen("RapHael.png", confidence = 0.8)
                         pyautogui.click(RapHael)
@@ -1324,19 +1325,49 @@ if task == "6" :
                         pyautogui.click(FarmForestToken)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Cannot find ADVENTURE Quests.")
+                        print("Cannot find Farm Forest Token.")
                     try:
                         accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
                         pyautogui.click(accept)
                         time.sleep(1)
                     except pyautogui.ImageNotFoundException:
-                        print("Cannot find ADVENTURE Quests.")
+                        print("Cannot find Accept.")
+                    try:
+                        FarmForestTokenComplete = pyautogui.locateOnScreen("FarmForestTokenComplete.png", confidence = 0.8)
+                        pyautogui.click(FarmForestTokenComplete)
+                        time.sleep(1)
+                        try:
+                            TurnIn = pyautogui.locateOnScreen("TurnIn.png")
+                            pyautogui.click(TurnIn)
+                            time.sleep(1)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find Turn In.")
+                    except pyautogui.ImageNotFoundException:
+                        print("Farm Forest Token is not complete yet.")
                     try:
                         forestRoom1 = pyautogui.locateOnScreen("forestRoom1.png", confidence = 0.8)
                         pyautogui.click(forestRoom1)
                         time.sleep(5)
+                        for genericAttackCount in range (4) :
+                            genericAttack()
                         pyautogui.click(forestRoom1)
                         time.sleep(5)
+                        for genericAttackCount in range (3) :
+                            genericAttack()
+                        pyautogui.click(forestRoom1)
+                        time.sleep(5)
+                        pyautogui.hotkey("1")
+                        pyautogui.write("/join lostisland-" + str(roomNumber))
+                        pyautogui.hotkey("Enter")
+                        time.sleep(5)
+                        try:
+                            lostIslandRoom1 = pyautogui.locateOnScreen("lostIslandRoom1.png", confidence = 0.8)
+                            pyautogui.click(lostIslandRoom1)
+                            time.sleep(4)
+                        except pyautogui.ImageNotFoundException:
+                            print("Cannot find lostIslandRoom1.")
+                        for genericAttackCount in range (3) :
+                            genericAttack()
                     except pyautogui.ImageNotFoundException:
                         print("Cannot find forestRoom1.")
                     for drops in range(4) : 
