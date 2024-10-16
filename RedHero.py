@@ -1489,6 +1489,13 @@ if task == "8" :
         except pyautogui.ImageNotFoundException:
             print("Not in galdonRoom2.")
         genericAttack()
+        for drops in range (2) : 
+                try:
+                    yes = pyautogui.locateOnScreen("Yes.png", confidence = 0.8)
+                    pyautogui.click(yes)
+                    time.sleep(1)
+                except pyautogui.ImageNotFoundException:
+                    print("No items left to claim.")
         try:
             galdonRoom4 = pyautogui.locateOnScreen("galdonRoom4.png", confidence = 0.9)
             pyautogui.click(galdonRoom4)
