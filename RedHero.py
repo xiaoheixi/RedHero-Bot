@@ -36,6 +36,11 @@ def bossIsStillALive() :
             bossStillAlive = 0
         except pyautogui.ImageNotFoundException:
             print("Boss is still alive!")
+        try:
+            join = pyautogui.locateOnScreen("Join.png", confidence = 0.8)
+            bossStillAlive = 0
+        except pyautogui.ImageNotFoundException:
+            print("Boss is still alive!")
 def farmWorldBoss() : 
     try:
         Respawn = pyautogui.locateOnScreen("Respawn.png", confidence = 0.9)
