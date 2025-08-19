@@ -183,46 +183,47 @@ task = input("1. Farm HCs\n2. Farm World Boss\n3. Get XP\n4. Generic Attack\n5. 
 if task == "1" :
     # Farming HCs
     try:
-        redHeroTaskBarIcon = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/RedHeroTaskBarIcon.png", confidence = 0.8)
+        redHeroTaskBarIcon = pyautogui.locateOnScreen("RedHeroTaskBarIcon.png", confidence = 0.8)
         pyautogui.click(redHeroTaskBarIcon)
     except pyautogui.ImageNotFoundException:
         print('Red Hero is not open.')
+    pyautogui.hotkey('enter')
     pyautogui.write("/join farm-68480")
     pyautogui.hotkey('enter')
     time.sleep(2)
     try:
-        farmRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/FarmRoom1.png", confidence = 0.8)
+        farmRoom1 = pyautogui.locateOnScreen("FarmRoom1.png", confidence = 0.8)
         pyautogui.click(farmRoom1)
         time.sleep(1)
     except pyautogui.ImageNotFoundException:
         print('Not in Farm Room 1.')
     try:
-        ADVENTURESQuest = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/ADVENTURESQuest.png", confidence = 0.8)
+        ADVENTURESQuest = pyautogui.locateOnScreen("ADVENTURESQuest.png", confidence = 0.8)
         pyautogui.click(ADVENTURESQuest)
         time.sleep(1)
     except pyautogui.ImageNotFoundException:
         print("Can't find ADVENTURESQuest")
     try:
-        certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+        certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
         pyautogui.click(certificateYourself)
         time.sleep(1)
     except pyautogui.ImageNotFoundException:
         print("Can't find Certificate Yourself!")
     try:
-        accept = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Accept.png", confidence = 0.8)
+        accept = pyautogui.locateOnScreen("Accept.png", confidence = 0.8)
         pyautogui.click(accept)
     except pyautogui.ImageNotFoundException:
         print("Can't find Accept!")
     pyautogui.hotkey('l')
     time.sleep(1)
     try:
-        farmRoom2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/FarmRoom2.png")
+        farmRoom2 = pyautogui.locateOnScreen("FarmRoom2.png")
         pyautogui.click(farmRoom2)
         time.sleep(4)
     except pyautogui.ImageNotFoundException:
         print("Not in Farm Room 2.")
     try:
-        farmRoom3 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/FarmRoom3.png")
+        farmRoom3 = pyautogui.locateOnScreen("FarmRoom3.png")
         pyautogui.click(farmRoom3)
         time.sleep(4)
         pyautogui.click(farmRoom3)
@@ -235,13 +236,13 @@ if task == "1" :
             pyautogui.hotkey('l')
             time.sleep(1)
             try:
-                certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+                certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
                 pyautogui.click(certificateYourself)
                 time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Can't find Certificate Yourself!")
-            scarecrowDefeat = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/ScarecrowDefeat.png", confidence = 0.9)
-            treeantDefeat = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/TreeantDefeat.png", confidence = 0.9)
+            scarecrowDefeat = pyautogui.locateOnScreen("ScarecrowDefeat.png", confidence = 0.9)
+            treeantDefeat = pyautogui.locateOnScreen("TreeantDefeat.png", confidence = 0.9)
             questItem = int(1)
         except pyautogui.ImageNotFoundException:
             pyautogui.hotkey('l')
@@ -257,13 +258,13 @@ if task == "1" :
     time.sleep(2)
     pyautogui.hotkey('l')
     try:
-        umbraRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/UmbraRoom1.png", confidence = 0.9)
+        umbraRoom1 = pyautogui.locateOnScreen("UmbraRoom1.png", confidence = 0.9)
         pyautogui.click(umbraRoom1)
         time.sleep(2)
     except pyautogui.ImageNotFoundException:
         print("Not in Farm Room 1.")
     try:
-        umbraRoom2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/UmbraRoom2.png", confidence = 0.9)
+        umbraRoom2 = pyautogui.locateOnScreen("UmbraRoom2.png", confidence = 0.9)
         pyautogui.click(umbraRoom2)
         time.sleep(4)
         pyautogui.click(umbraRoom2)
@@ -276,14 +277,14 @@ if task == "1" :
             pyautogui.hotkey('l')
             time.sleep(1)
             try:
-                certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+                certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
                 pyautogui.click(certificateYourself)
                 time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Can't find Certificate Yourself!")
-            ghoulSoul = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/GhoulSoul.png", confidence = 0.9)
-            neophyteSoul = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/NeophyteSoul.png", confidence = 0.9)    
-            knightSoul = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/KnightSoul.png", confidence = 0.9)
+            ghoulSoul = pyautogui.locateOnScreen("GhoulSoul.png", confidence = 0.9)
+            neophyteSoul = pyautogui.locateOnScreen("NeophyteSoul.png", confidence = 0.9)    
+            knightSoul = pyautogui.locateOnScreen("KnightSoul.png", confidence = 0.9)
             questItem = int(1)
         except pyautogui.ImageNotFoundException:
             pyautogui.hotkey('l')
@@ -299,13 +300,13 @@ if task == "1" :
     pyautogui.hotkey('enter')
     time.sleep(2)
     try:
-        saloonRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/SaloonRoom1.png", confidence = 0.9)
+        saloonRoom1 = pyautogui.locateOnScreen("SaloonRoom1.png", confidence = 0.9)
         pyautogui.click(saloonRoom1)
         time.sleep(2)
     except pyautogui.ImageNotFoundException:
         print("Not in Saloon Room 1.")
     try:
-        saloonRoom2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/SaloonRoom2.png", confidence = 0.9)
+        saloonRoom2 = pyautogui.locateOnScreen("SaloonRoom2.png", confidence = 0.9)
         pyautogui.click(saloonRoom2)
         time.sleep(2)
     except pyautogui.ImageNotFoundException:
@@ -316,12 +317,12 @@ if task == "1" :
             pyautogui.hotkey('l')
             time.sleep(1)
             try:
-                certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+                certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
                 pyautogui.click(certificateYourself)
                 time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Can't find Certificate Yourself!")  
-            bulletless = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/Bulletless.png", confidence = 0.9)
+            bulletless = pyautogui.locateOnScreen("Bulletless.png", confidence = 0.9)
             questItem = int(1)
         except pyautogui.ImageNotFoundException:
             pyautogui.hotkey('l')
@@ -337,7 +338,7 @@ if task == "1" :
     pyautogui.hotkey('enter')
     time.sleep(2)
     try:
-        blackhornRoom1 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/BlackhornRoom1.png", confidence = 0.8)
+        blackhornRoom1 = pyautogui.locateOnScreen("BlackhornRoom1.png", confidence = 0.8)
         pyautogui.click(blackhornRoom1)
         time.sleep(2)
     except pyautogui.ImageNotFoundException:
@@ -348,12 +349,12 @@ if task == "1" :
             pyautogui.hotkey('l')
             time.sleep(1)
             try:
-                certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+                certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
                 pyautogui.click(certificateYourself)
                 time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Can't find Certificate Yourself!")  
-            tombSpider = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/TombSpider.png", confidence = 0.9)
+            tombSpider = pyautogui.locateOnScreen("TombSpider.png", confidence = 0.9)
             questItem = int(1)
         except pyautogui.ImageNotFoundException:
             pyautogui.hotkey('l')
@@ -366,19 +367,19 @@ if task == "1" :
             time.sleep(0.5)
     pyautogui.hotkey('l')
     try:
-        blackhornRoom2 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/BlackhornRoom2.png", confidence = 0.8)
+        blackhornRoom2 = pyautogui.locateOnScreen("BlackhornRoom2.png", confidence = 0.8)
         pyautogui.click(blackhornRoom2)
         time.sleep(2)
     except pyautogui.ImageNotFoundException:
         print("Not in Blackhorn Room 2.")
     try:
-        blackhornRoom3 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/BlackhornRoom3.png", confidence = 0.8)
+        blackhornRoom3 = pyautogui.locateOnScreen("BlackhornRoom3.png", confidence = 0.8)
         pyautogui.click(blackhornRoom3)
         time.sleep(4)
     except pyautogui.ImageNotFoundException:
         print("Not in Blackhorn Room 3.")
     try:
-        blackhornRoom4 = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/BlackhornRoom4.png", confidence = 0.8)
+        blackhornRoom4 = pyautogui.locateOnScreen("BlackhornRoom4.png", confidence = 0.8)
         pyautogui.click(blackhornRoom4)
         time.sleep(4)
     except pyautogui.ImageNotFoundException:
@@ -389,12 +390,12 @@ if task == "1" :
             pyautogui.hotkey('l')
             time.sleep(1)
             try:
-                certificateYourself = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/CertificateYourself.png", confidence = 0.8)
+                certificateYourself = pyautogui.locateOnScreen("CertificateYourself.png", confidence = 0.8)
                 pyautogui.click(certificateYourself)
                 time.sleep(1)
             except pyautogui.ImageNotFoundException:
                 print("Can't find Certificate Yourself!")  
-            restlessUndead = pyautogui.locateOnScreen("C:/Users/justi/OneDrive/Documents/RedHero/RedHero-Bot/RestlessUndead.png", confidence = 0.9)
+            restlessUndead = pyautogui.locateOnScreen("RestlessUndead.png", confidence = 0.9)
             questItem = int(1)
         except pyautogui.ImageNotFoundException:
             pyautogui.hotkey('l')
